@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lab 6</title>
+        <style>
+            *{
+                margin: 0;
+            }
+            #flex_parent{
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+            }
+            div div {
+                width: 100px;
+                background-color: antiquewhite;
+                border: solid 1px;
+                box-sizing: border-box;
+            }
+            #child1{
+                min-height: 200px; /* min-height is used since if there is too much text, it will spill out of regular height */
+            }
+            #child2{
+                min-height: 300px;
+            }
+            #child3{
+                min-height: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="flex_parent">
+            <img id="child1" src="https://picsum.photos/200/200?random=1" alt="random image">
+            <img id="child2" src="https://picsum.photos/300/300?random=2" alt="random image">
+            <img id="child3" src="https://picsum.photos/200/200?random=3" alt="random image">
+        </div>
+    </body>
+</html>
