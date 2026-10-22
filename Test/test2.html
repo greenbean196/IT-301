@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>test2</title>
+        <style>
+            *{
+                margin: 0;
+            }
+            #flex_parent{
+                /*height: 200vh; /* vh sets viewport height */
+                width: 70vw;
+                height: 100vh;
+                border: 1px solid;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around; /* space in-between */
+                align-items: flex-end;
+                flex-wrap: wrap;
+            }
+            div div {
+                width: 100px;
+                background-color: antiquewhite;
+                border: solid 1px;
+                box-sizing: border-box;
+            }
+            #child1{
+                min-height: 50px; /* min-height is used since if there is too much text, it will spill out of regular height */
+            }
+            #child2{
+                min-height: 150px;
+            }
+            #child3{
+                min-height: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="flex_parent">
+            <div id="child1">child1</div>
+            <div id="child2">child2</div>
+            <div id="child3">child3</div>
+        </div>
+    </body>
+</html>

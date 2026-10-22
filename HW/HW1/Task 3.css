@@ -1,0 +1,24 @@
+body {
+    font-family: sans-serif;
+}
+h2 {
+    color: gray;
+}
+mark {
+    color: red;
+    background-color: lightgray;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+footer {
+    font-size: 12px;
+}
+section {
+    color: darkblue;
+    background-color: lightgray;
+    border-radius: 5px;
+    padding: 10px;
+    border: double gray;
+    max-width: 450px;
+    padding-left: 50px;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>.value and functions</title>
+    </head>
+    <body>
+        <form action="#">
+            <label for="grade">What is your grade?</label>
+            <input type="number" id="grade"> <br><br>
+            <button id="bttn" type="button">Submit</button>
+        </form>
+        <p id="result"></p>
+
+        <p>Select your color:</p>
+        <form action="#">
+            <input type="radio" name="color" value="red">Red<br>
+            <input type="radio" name="color" value="green">Green<br>
+            <input type="radio" name="color" value="blue">Blue<br><br>
+            <button id="select" type="button">Select</button>
+        </form>
+        <p id="myColor"></p>
+
+        <script>
+            const grade = document.getElementById('grade');
+            const result = document.getElementById('result');
+
+            document.getElementById('bttn').addEventListener('click', function(){
+                result.textContent = Number(grade.value) + 5;
+                console.log(typeof grade.value);
+            });
+            document.getElementById('select').addEventListener('click', function(){
+                const myColor = document.querySelector(`[name = color]:checked`);
+                console.log(myColor.value);
+            });
+
+            //functions
+            //const sub = function(a, b) {return a - b};
+            const sub = (a, b) => a - b;
+            console.log(sub(5, 2));
+
+            //const greet = function(name) {console.log(`Welcome ${name}`)};
+            const greet = name => console.log(`Welcome ${name}`);
+            greet('Mike');
+            const greet1 = greet;
+            greet1('Amy');
+        </script>
+    </body>
+</html>

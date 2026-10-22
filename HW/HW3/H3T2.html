@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Homework 3 Task 2</title>
+        <style>
+            *{
+                margin: 0;
+            }
+            body {
+                font-family: sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100vw;
+                height: 100vh;
+            }
+            #flex_parent{
+                min-height: 400px;
+                max-width: 400px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                gap: 2px;
+                background-color: antiquewhite;
+                border: solid 1px;
+            }
+            div div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100px;
+                height: 100px;
+                background-color: pink;
+                border: solid 2px hotpink;
+                border-radius: 10px;
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="flex_parent">
+            <div id="A">A</div>
+            <div id="B">B</div>
+            <div id="C">C</div>
+            <div id="D">D</div>
+            <div id="E">E</div>
+            <div id="F">F</div>
+            <div id="G">G</div>
+            <div id="H">H</div>
+            <div id="I">I</div>
+        </div>
+    </body>
+</html>
