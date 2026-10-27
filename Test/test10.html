@@ -3,9 +3,58 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>test10</title>
+        <title>Promise, fetch, and API</title>
     </head>
     <body>
-        
+        <h1>Cute Cats</h1>
+        <p>Welcome to my cat website</p>
+        <script>
+            // create a promise
+            const p = new Promise((resolve, reject)=>{
+                const grade = 90;
+                if (grade > 50){resolve('Pass the class...');
+                }
+                else {reject('Fail the class');}
+            });
+            //consume the promise using .then and .catch
+            //p.then(success=>console.log(success)).catch(reason=>console.log(reason)).finally(()=>console.log('Done.'));
+
+            //consume promise using await and async
+            /*
+            const checkGrade = async()=>{
+                try{
+                    //handle the fullfilled state
+                    const result = await p;
+                    console.log(result);
+                }catch{
+                    //to handle the fail state
+                    console.log(reason);
+                }
+            }
+            checkGrade(); */
+
+            const site = 'https://api.thecatapi.com/v1/images/search';
+            let img = document.createElement('img');
+            let bttn = document.createElement('button');
+            bttn.type = 'button';
+            bttn.textContent = 'Click Me';
+            let form = document.createElement('form');
+            form.action = '#';
+            form.appendChild(bttn);
+            document.body.appendChild(form);
+            const getImg = async()=>{
+                try{
+                    let result = await fetch(site);
+                    result = await result.json();
+                    //if (!response.ok) throw new Error(`Response status:
+                    //    ${response.status}`);
+                    img.src = result[0].url;
+                    img.alt = 'cute cat';
+                    img.style.width = '300px';
+                    document.body.appendChild(img);
+                }catch{(reason)=>console.log(reason)}
+            }
+            bttn.addEventListener('click', getImg);
+        </script>
     </body>
 </html>

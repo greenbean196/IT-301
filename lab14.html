@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Promise, fetch, and API</title>
+    </head>
+    <body>
+        <p id="name"></p>
+        <p id="email"></p>
+        <p id="phone"></p>
+        <script>
+            const site = 'https://randomuser.me/api/';
+            let img = document.createElement('img');
+            let bttn = document.createElement('button');
+            let name = document.getElementById('name');
+            let email = document.getElementById('email');
+            let phone = document.getElementById('phone');
+            bttn.type = 'button';
+            bttn.textContent = 'Generate Profile';
+            let form = document.createElement('form');
+            form.action = '#';
+            form.appendChild(bttn);
+            document.body.appendChild(form);
+            const getImg = async()=>{
+                try{
+                    let result = await fetch(site);
+                    result = await result.json();
+                    img.src = result.results[0].picture.medium;
+                    img.alt = 'Profile picture';
+                    img.style.width = '300px';
+                    document.body.appendChild(img);
+
+                    name.textContent = result.results[0].name.title + ' ' + result.results[0].name.first + ' ' + result.results[0].name.last;
+                    email.textContent = result.results[0].email;
+                    phone.textContent = result.results[0].phone;
+                }catch{(reason)=>console.log(reason)}
+            }
+            bttn.addEventListener('click', getImg);
+        </script>
+    </body>
+</html>
