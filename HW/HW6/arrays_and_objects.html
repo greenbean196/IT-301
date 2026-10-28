@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays and Objects</title>
+</head>
+<body>
+    <script src="data.js"></script>
+    <script>
+
+
+/**********************************************
+Q1. Accessing Object Properties
+Print the name of the first student in the array and their History grade.
+Your output should look like this:
+The name of the first student is: Amina and history grade is: 88
+***********************************************************/
+console.log(`The name of the first student is: ` + students[0].name + ` and history grade is: ` + students[0].grades.history);
+
+/******************************************
+Q2. Displaying Student Information
+Print the name of each student and their grades for all four courses: Math, English, Science, and History.
+Your output should follow this format:
+Name: Amina
+            math:85,
+            english:92 ,
+            science: 78,
+            history:88
+Name: Carlos
+            math:90,
+            english:88 ,
+            science: 95,
+            history:82
+Name: Li Wei
+            math:70,
+            english:75 ,
+            science: 80,
+            history:90
+Name: Fatima
+            math:95,
+            english:85 ,
+            science: 92,
+            history:87
+Name: John
+            math:60,
+            english:70 ,
+            science: 68,
+            history:65
+Name: Sofia
+            math:88,
+            english:91 ,
+            science: 85,
+            history:93
+*******************************************/
+for (let x = 0; x < students.length; x++) {
+    console.log(`Name: ` + students[x].name +
+        `\n             math: ` + students[x].grades.math + `,` +
+        `\n             english` + students[x].grades.english + `,` +
+        `\n             science` + students[x].grades.science + `,` +
+        `\n             history` + students[x].grades.history);
+}
+
+/*************************
+Q3. Calculating Student GPAs
+Calculate the GPA for each student by finding the average of their grades across all courses. Print each student's name and GPA in the console.
+Your output should look like this:
+
+Name = Amina GPA = 85.75
+Name = Carlos GPA = 88.75
+Name = Li Wei GPA = 78.75
+Name = Fatima GPA = 89.75
+Name = John GPA = 65.75
+Name = Sofia GPA = 89.25
+**************************/
+for (let x = 0; x < students.length; x++) {
+    let average = (students[x].grades.math + students[x].grades.english + students[x].grades.science + students[x].grades.history) / 4;
+    console.log(`Name = ` + students[x].name + ` GPA = ` + average);
+}
+
+/******************************************
+Q4. Adding a New Student
+Add a new student named Nina to the students array with the following information:
+
+name: Nina
+age: 21
+grades:
+    math: 82
+    english: 87
+    science: 90
+    history: 85
+
+Then, use the array's length property to print the total number of students.
+Your output should look like this:
+My array has 7 students
+
+*******************************************/
+students[6] = {name: "Nina", age: 21, grades:{math: 82, english: 87, science: 90, history: 85}}
+console.log(`My array has ` + students.length + ` students`);
+
+/*******************************************
+Q5. Adding a New Course
+Add a new course named art to each student's grades object.
+Then, print the name of each student and the names of all their courses, including Art.
+------------------------------------------------------------------------------*/
+for (let x = 0; x < students.length; x++) {
+    students[x].grades.art = 100;
+    console.log(`Name: ` + students[x].name + ` Courses: `);
+    for (let key in students[x].grades) {
+        console.log(key);
+    }
+}
+
+/***************************************
+Q6. Finding and Updating a Student
+Find the student named John using an appropriate array method. Increase his Math grade by 10 points.
+Print John's updated Math grade in the console.
+Your output should look like this:
+Current Math grade for John = 70
+************************************/
+students[4].grades.math = students[4].grades.math + 10;
+console.log(`Current Math grade for John = ` + students[4].grades.math);
+
+
+/***********************************************
+ Q7. Calculating Course Averages
+Calculate the average grade for each course across all students. Print the name of each course and its average grade in the console.
+**************************************************/
+let mathTotal = 0;
+let englishTotal = 0;
+let scienceTotal = 0;
+let historyTotal = 0;
+let artTotal = 0;
+for (let x = 0; x < students.length; x++) {
+    mathTotal = mathTotal + students[x].grades.math;
+    englishTotal = englishTotal + students[x].grades.english;
+    scienceTotal = scienceTotal + students[x].grades.science;
+    historyTotal = historyTotal + students[x].grades.history;
+    artTotal = artTotal + students[x].grades.art;
+}
+console.log(`Average Math grade: ` + (mathTotal / 7) +
+    `\nAverage English grade: ` + (englishTotal / 7) +
+    `\nAverage Science grade: ` + (scienceTotal / 7) +
+    `\nAverage History grade: ` + (historyTotal / 7) +
+    `\nAverage Art grade: ` + (artTotal / 7)
+);
+
+    </script>
+</body>
+</html>
