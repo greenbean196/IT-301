@@ -85,23 +85,20 @@
                 let result = await fetch(site);
                 result = await result.json();
                 stuff = result;
-                console.log(stuff);
+                console.table(stuff);
             }catch{(reason)=>console.log(reason)}
         }
 
-        const display = async()=>{
+        const display = async(stuff2 = stuff)=>{
             try {
-                for (let x = 0; x < stuff.length; x++) {
-                    let n = stuff[x].userId;
-                    // if statement here?
+                for (let x = 0; x < stuff2.length; x++) {
                     const article = document.createElement("article");
                     const h2 = document.createElement("h2");
                     const p = document.createElement("p");
-                    h2.textContent = stuff[x].title;
-                    p.textContent = stuff[x].body + ' userId: ' + stuff[x].userId + ' id: ' + stuff[x].id;
+                    h2.textContent = stuff2[x].title;
+                    p.textContent = stuff2[x].body + ' userId: ' + stuff2[x].userId + ' id: ' + stuff2[x].id;
                     article.append(h2, p);
                     document.body.appendChild(article);
-                    console.log("test");
                 }
             }catch{(reason)=>console.log(reason)}
         }
@@ -112,7 +109,49 @@
         }
         doIt();
 
-        document.getElementById('filterBtn').addEventListener('click', display);
+        document.getElementById('filterBtn').addEventListener('click', ()=>{
+            filterPosts();
+        });
+
+        const filterPosts = ()=>{
+            const selected = document.getElementById('userID').value;
+            const userPosts = stuff.filter((post) => post.userId === Number(selected));
+            console.table(userPosts);
+        }
+
+        const clear = ()=>{
+            document.querySelectorAll('article').forEach((article) => {
+                article.remove();
+            });
+        }
+
+        const showMessage = (message)=>{
+            const article = document.createElement("article");
+            const p = document.createElement("p");
+            p.textContent = message;
+            article.append(p);
+            document.body.appendChild(article);
+        }
+
+        const displayUserPosts = ()=>{
+            const userId = Number(document.getElementById('displayUserID').value);
+            clear();
+            const userPosts = stuff.filter((post) => post.userId === userId);
+            display(userPosts);
+        }
+        document.getElementById('displayUserBtn').addEventListener('click', displayUserPosts);
+
+        const findPost = ()=>{
+            const postId = Number(document.getElementById('postID').value);
+            clear();
+            const found = stuff.find((post) => post.id === postId);
+            if (found) {
+                display([found]);
+            } else {
+                showMessage("Post is not found");
+            }
+        }
+        document.getElementById('findBtn').addEventListener('click', findPost);
 
     </script>
 
