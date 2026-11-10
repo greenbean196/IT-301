@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lab 16</title>
+    </head>
+    <body>
+        <form id="myForm">
+            <label for="name">Enter name</label>
+            <input type="text" id="name" required>
+            <label for="Email">Enter email</label>
+            <input type="email" id="Email" required>
+            <label for="Password">Enter password</label>
+            <input type="password" id="Password" required>
+            <button id="submit" type="button">Submit</button>
+        </form>
+        <p id="result"></p>
+        <script>
+            const 
+            const result = document.getElementById('result');
+
+            name.addEventListener('input', ()=>{
+                /* if (answer.value == myNumber) {
+                    result.textContent = 'Correct';
+                    result.classList.add('correct');
+                    result.classList.remove('wrong');
+                } else {
+                    result.textContent = 'Wrong... Try again!';
+                    result.classList.add('wrong');
+                } */
+               const isName = name.value ==='string';
+               result.classList.toggle('correct', isCorrect);
+               result.classList.toggle('wrong', !isCorrect);
+               result.textContent = isCorrect?'Correct Answer':'Wrong... Try again!';
+            })
+        </script>
+    </body>
+</html>
