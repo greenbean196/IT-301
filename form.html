@@ -4,30 +4,64 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Lab 16</title>
+        <style>
+            #rules {
+                display: none;
+            }
+            .correct {
+                color: green;
+            }
+            .wrong {
+                color: red;
+            }
+        </style>
     </head>
     <body>
         <form id="myForm">
             <label for="name">Enter name</label>
-            <input type="text" id="name" required>
+            <input type="text" id="name" placeholder="Name" required>
             <label for="Email">Enter email</label>
-            <input type="email" id="Email" required>
+            <input type="email" id="Email" placeholder="Email" required>
             <label for="Password">Enter password</label>
-            <input type="password" id="Password" required>
-            <button id="submit" type="button">Submit</button>
+            <input type="password" id="Password" placeholder="Password" required>
+            <button id="submit" type="submit">Submit</button>
+            <div id="rules">
+                <p id="char" class="wrong">At least 6 characters</p>
+                <p id="schar" class="wrong">Must include a special character(!@#$...)</p>
+                <p id="upper" class="wrong">Must include an uppercase letter (A-Z)</p>
+            </div>
         </form>
-        <p id="result"></p>
         <script>
             const result = document.getElementById('result');
             const name = document.getElementById('name');
             const submit = document.getElementById('submit');
+            const myForm = document.getElementById('myForm');
+            const password = document.getElementById('Password');
+            const rules = document.getElementById('rules');
+            const char = document.getElementById('char');
+            const schar = document.getElementById('schar');
+            const upper = document.getElementById('upper');
 
-            submit.addEventListener('click', ()=>{
-               const isName = name.value ==='string';
-               console.log(name.value);
-               result.classList.toggle('correct', isName);
-               result.classList.toggle('wrong', !isCorrect);
-               result.textContent = isCorrect?'Correct Answer':'Wrong... Try again!';
-            })
+
+            myForm.addEventListener('submit', (event) => {
+               event.preventDefault();
+               window.location.href = "success.html";
+            });
+
+            password.addEventListener('input', () => {
+                const password2 = password.value;
+                const charTrue = password2.length >= 6;
+                const scharTrue = /[!@#$]/.test(password2);
+                const upperTrue = /[A-Z]/.test(password2);
+                char.classList.toggle('correct', charTrue);
+                char.classList.toggle('wrong', !charTrue);
+                schar.classList.toggle('correct', scharTrue);
+                schar.classList.toggle('wrong', !scharTrue);
+                upper.classList.toggle('correct', upperTrue);
+                upper.classList.toggle('wrong', !upperTrue);
+
+                rules.style.display = 'block';
+            });
         </script>
     </body>
 </html>
