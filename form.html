@@ -17,20 +17,14 @@
         </form>
         <p id="result"></p>
         <script>
-            const 
             const result = document.getElementById('result');
+            const name = document.getElementById('name');
+            const submit = document.getElementById('submit');
 
-            name.addEventListener('input', ()=>{
-                /* if (answer.value == myNumber) {
-                    result.textContent = 'Correct';
-                    result.classList.add('correct');
-                    result.classList.remove('wrong');
-                } else {
-                    result.textContent = 'Wrong... Try again!';
-                    result.classList.add('wrong');
-                } */
+            submit.addEventListener('click', ()=>{
                const isName = name.value ==='string';
-               result.classList.toggle('correct', isCorrect);
+               console.log(name.value);
+               result.classList.toggle('correct', isName);
                result.classList.toggle('wrong', !isCorrect);
                result.textContent = isCorrect?'Correct Answer':'Wrong... Try again!';
             })
