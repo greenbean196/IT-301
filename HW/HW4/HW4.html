@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HW4</title>
+        <style>
+            * {
+                margin: 0;
+            }
+            .left {
+                display: flex;
+                justify-content: flex-start;
+                width: 300px;
+            }
+            .right {
+                display: flex;
+                justify-content:flex-end;
+            }
+            #child1 {
+                align-self: flex-start;
+                margin-top: 200px;
+            }
+            #child2 {
+                margin-top: 100px;
+                height: 100px;
+            }
+            #child3 {
+                height: 100px;
+            }
+            #child4 {
+                height: 100px;
+            }
+            #child5 {
+                margin-top: 100px;
+                height: 100px;
+            }
+            #child6 {
+                margin-top: 200px;
+                height: 100px;
+            }
+            body {
+                display: flex;
+                width: 600px;
+                height: 300px;
+                gap: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="left">
+            <img id="child1" src="https://picsum.photos/100/100?random=1" alt="random image">
+            <img id="child2" src="https://picsum.photos/100/100?random=2" alt="random image">
+            <img id="child3" src="https://picsum.photos/100/100?random=3" alt="random image">
+        </div>
+        <div class="right">
+            <img id="child4" src="https://picsum.photos/100/100?random=4" alt="random image">
+            <img id="child5" src="https://picsum.photos/100/100?random=5" alt="random image">
+            <img id="child6" src="https://picsum.photos/100/100?random=6" alt="random image">
+        </div>
+    </body>
+</html>

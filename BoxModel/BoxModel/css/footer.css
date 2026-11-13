@@ -1,0 +1,20 @@
+/* ====== FOOTER.CSS ====== */
+/* Add style for step#4 here*/
+footer nav {
+    background-color: #D9AED3;
+    border: 5px solid #ab8fbe;
+    margin-bottom: -2px;
+    border-radius: 5px;
+}
+
+footer nav a {
+    color: #3E1E68;
+    font-weight: 700;
+}
+
+footer p {
+    background-color: #b09ecf;
+    color: #3E1E68;
+    border: 3px solid #ab8fbe;
+    border-radius: 5px;
+}

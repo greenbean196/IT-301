@@ -14,7 +14,7 @@ console.log(numbers); */
     sub:(a, b) => a - b
 }
 console.log(operation.sub(1, 4));*/
-/*let fruites = {name: 'Apple', 
+let fruites = {name: 'Apple',
                 color: ['Red', 'Yellow', 'Green'],
                 calories: 56
 }
@@ -23,14 +23,14 @@ console.log(fruites.key);
 fruites.type = 'type of apple';
 fruites.calories = 134;
 console.log(fruites);
-console.log(fruites.color[2]);*/
+console.log(fruites.color[2]);
 /*let student = {
     name: 'Amy',
     greet: function(){return `Welcome ${this.name}`}
 }
 console.log(student.greet());*/
 /*let fruites = [{name: 'Apple', color: 'Red', calories: 95},
-               {name: 'Orange', color: 'Orange', calories: 65}, 
+               {name: 'Orange', color: 'Orange', calories: 65},
                {name: 'Banana', color: 'Yellow', calories: 195}];
 let key = 'color';
 console.log(fruites[1][key]);

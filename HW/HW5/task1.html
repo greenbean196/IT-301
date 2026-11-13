@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 1</title>
+  <script src="https://kit.fontawesome.com/0c5bdac1be.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+    }
+    body {
+      padding: 20px;
+      background-color: rgb(68, 0, 68);
+      font-family: sans-serif;
+      div {
+        background-color: orange;
+        width: 300px;
+        text-align: center;
+        position: fixed;
+        right: -85px;
+        bottom: 50px;
+        padding: 10px;
+        transform: rotate(-45deg);
+      }
+    }
+    main {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+    section {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 250px;
+      padding: 20px;
+      background-color: rgb(223, 158, 223);
+      border-radius: 5px;
+      h1 {
+        font-size: 25px;
+        margin-bottom: 20px;
+      }
+      button {
+        margin-top: auto;
+        padding: 10px;
+        background-color: rgb(212, 80, 212);
+        border: 1px solid black;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      li {
+        border-bottom: 1px solid black;
+        padding: 5px;
+      }
+      li:last-child {
+        border-bottom: none;
+      }
+      .economy, .preferred, .premium {
+        display: flex;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        font-size: 25px;
+      }
+      .economy {
+        background-color: rgb(47, 255, 47);
+      }
+      .preferred {
+        background-color: yellow;
+      }
+      .premium {
+        background-color: orange;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section>
+      <span class="economy"><i class="fas fa-hand-holding-usd"></i></span>
+      <h1>Economy</h1>
+      <ul>
+        <li>Amet quisquam unde?</li>
+        <li>Dolor quam facilis.</li>
+        <li>Elit voluptas qui.</li>
+        <li>Amet veniam sapiente.</li>
+        <li>Adipisicing nobis at?</li>
+      </ul>
+      <button>Save Money</button>
+    </section>
+    <section>
+      <span class="preferred"><i class="fas fa-medal"></i></span>
+      <h1>Preferred</h1>
+      <ul>
+        <li>Elit vel sit!</li>
+        <li>Lorem maiores iusto?</li>
+        <li>Adipisicing reiciendis impedit.</li>
+        <li>Ipsum quas ea!</li>
+        <li>Elit maiores similique</li>
+        <li>Ipsum iusto excepturi?</li>
+        <li>Lorem rem porro?</li>
+      </ul>
+      <button>Rival the Competition</button>
+    </section>
+    <section>
+      <span class="premium"><i class="fas fa-hat-wizard"></i></span>
+      <h1>Premium</h1>
+      <ul>
+        <li>Elit facilis corrupti</li>
+        <li>Amet asperiores consequuntur</li>
+        <li>Dolor praesentium unde</li>
+        <li>Lorem dicta blanditiis!</li>
+        <li>Consectetur amet praesentium</li>
+        <li>Dolor veniam recusandae?</li>
+        <li>Consectetur sequi quidem.</li>
+        <li>Dolor perferendis architecto</li>
+        <li>Sit error vel.</li>
+        <li>Sit vel exercitationem</li>
+        <li>Elit animi eveniet.</li>
+        <li>Consectetur velit sequi.</li>
+      </ul>
+      <button>Become a Power User</button>
+    </section>
+  </main>
+  <div>CALL 1-800-555-5555</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+/* ====== COLORS.CSS ====== */
+/* Add style for step#2 here*/
+
+body {
+    background-color: #FFE4E1;
+}
+
+header {
+    background-color: #3E1E68;
+    color: white;
+    border-bottom: 5px solid #E45A92;
+}
+
+main {
+    color: #222222;
+}
+
+main section:nth-child(1) {
+    background-color: #E8DFF5;
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px solid #C3B1E1;
+}
+
+main section:nth-child(2) {
+    background-color: #E8DFF5;
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px solid #C3B1E1;
+}
+
+main a {
+    color: #5A189A;
+}
