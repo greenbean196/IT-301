@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Project 2</title>
+        <style>
+            * {
+                margin: 0;
+                font-family: Arial;
+                a:hover {
+                    color: gold;
+                }
+            }
+
+            body {
+                background-color: #fffeef;
+            }
+
+            nav {
+                display: flex;
+                font-size: 18px;
+                ul {
+                    display: flex;
+                    position: fixed;
+                    width: 100%;
+                    gap: 20px;
+                    background-color: #4E2582;
+                    height: 100px;
+                    padding-left: 20px;
+                    justify-content: center;
+                    li {
+                        list-style-type: none;
+                        align-content: center;
+                        a {
+                            text-decoration: none;
+                            color: white;
+                            img {
+                                height: 100px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            main {
+                margin-top: 100px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                h1 {
+                    color: #4E2582;
+                    padding: 40px 20px 20px 20px;
+                    font-size: 50px;
+                    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                }
+                h2 {
+                    color: #4E2582;
+                    margin-bottom: 15px;
+                }
+                section {
+                    width: 700px;
+                    border: 3px solid #4E2582;
+                    border-radius: 10px;
+                    padding: 20px;
+                    margin-bottom: 30px;
+                    background-color: white;
+                }
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    label {
+                        font-weight: bold;
+                        color: #4E2582;
+                        margin-top: 10px;
+                    }
+                    input, select {
+                        padding: 8px;
+                        border: 1px solid #4E2582;
+                        border-radius: 5px;
+                    }
+                }
+                button {
+                    background-color: #4E2582;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    padding: 10px;
+                    margin-top: 15px;
+                    font-weight: bold;
+                }
+                button:hover {
+                    color: gold;
+                }
+                p {
+                    margin-bottom: 10px;
+                }
+                div.filters {
+                    display: flex;
+                    gap: 10px;
+                }
+            }
+
+            footer {
+                width: 100%;
+                background-color: #4E2582;
+                color: white;
+                text-align: center;
+                padding: 10px 0;
+            }
+            footer.small {
+                position: fixed;
+                bottom: 0;
+            }
+
+            /* Small screen media query */
+            @media (max-width: 800px) {
+                nav {
+                    font-size: 10px;
+                    ul {
+                        flex-wrap: wrap;
+                        height: auto;
+                        gap: 10px;
+                        padding: 10px;
+                    }
+                    ul li a img {
+                        height: 50px;
+                    }
+                }
+                main {
+                    margin-top: 140px;
+                    h1 {
+                        font-size: 35px;
+                    }
+                    section {
+                        width: 90%;
+                    }
+                    div.filters {
+                        flex-direction: column;
+                    }
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a><b>ABOUT</b></a></li>
+                    <li><a><b>FOUNDATION</b></a></li>
+                    <li><a><b>EVENTS</b></a></li>
+                    <li><a><b>GALLERY</b></a></li>
+                    <li><a><b>RESOURCES</b></a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>Beta Rho Hours Tracker</h1>
+            <section id="log">
+                <h2>Log Hours</h2>
+                <form id="hoursForm">
+                    <label for="name">Name</label>
+                    <input type="text" id="name">
+
+                    <label for="activity">Activity</label>
+                    <input type="text" id="activity">
+
+                    <label for="category">Category</label>
+                    <select id="category">
+                        <option value="">Select a category</option>
+                        <option value="service">Service</option>
+                        <option value="scholarship">Scholarship</option>
+                        <option value="fellowship">Fellowship</option>
+                    </select>
+
+                    <label for="date">Date</label>
+                    <input type="date" id="date">
+
+                    <label for="hours">Hours</label>
+                    <input type="number" id="hours">
+
+                    <label for="description">Description</label>
+                    <input type="text" id="description">
+
+                    <button type="submit" id="submit">Submit</button>
+                </form>
+            </section>
+
+            <section id="summary">
+                <h2>Summary</h2>
+                <p>Total chapter hours: <span id="totalHours">0</span></p>
+                <p>Service hours: <span id="serviceHours">0</span></p>
+                <p>Scholarship hours: <span id="scholarshipHours">0</span></p>
+                <p>Fellowship hours: <span id="fellowshipHours">0</span></p>
+                <p>Pending logs: <span id="pendingLogs">0</span></p>
+            </section>
+
+            <section id="records">
+                <h2>Records</h2>
+                <div class="filters">
+                    <input type="text" id="search" placeholder="Search name or activity">
+                    <select id="filterCategory">
+                        <option value="all">All Categories</option>
+                        <option value="service">Service</option>
+                        <option value="scholarship">Scholarship</option>
+                        <option value="fellowship">Fellowship</option>
+                    </select>
+                </div>
+            </section>
+        </main>
+
+        <footer class="small">
+            <p>&copy; 2026 Phi Sigma Pi - Beta Rho</p>
+        </footer>
+    </body>
+</html>
