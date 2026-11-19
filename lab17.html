@@ -15,6 +15,7 @@
         <button type="button" id="get">Get Data</button>
         <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
         <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
         <script>
             // Firebase configuration
             const firebaseConfig = {
@@ -26,6 +27,7 @@
 
             // Connect to Firestore
             const db = firebase.firestore();
+            const auth = firebase.auth();
 
             const name = document.getElementById('name');
             const grade = document.getElementById('grade');
