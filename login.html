@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+
+<body>
+    <form>
+        <label for="email">Email: </label>
+        <input type="email" id="email">
+
+        <br><br>
+
+        <label for="password">Password: </label>
+        <input type="password" id="password">
+
+        <br><br>
+
+        <button type="button" id="log">Login</button>
+    </form>
+
+    <p id="message"></p>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+    <script>
+        const firebaseConfig = {
+            // settings
+        };
+
+        // Connect to Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Connect to Firestore
+        const db = firebase.firestore();
+        const auth = firebase.auth();
+
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+        const log = document.getElementById('log');
+        const message = document.getElementById('message');
+
+        log.addEventListener('click', async () => {
+            try {
+                const cred = await auth.signInWithEmailAndPassword(
+                    email.value.trim(), password.value);
+                const uid = cred.user.uid;
+
+                const userDoc = await db.collection("users").doc(uid).get();
+                const role = userDoc.data().role;
+
+                if (role === "faculty") {
+                    window.location.href = "lab17.html";
+                } else {
+                    window.location.href = "student.html";
+                }
+            } catch (error) {
+                message.textContent = "Login failed. Check your details.";
+            }
+        });
+    </script>
+</body>
+
+</html>
